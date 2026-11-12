@@ -1,105 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Linjen under bruker et eksternt CSS-ark for å tilbakestille en del unødvendig CSS som vi får default fra html-elementene -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Forside: øvelse 7</title>
+    <title>Responsivt Design - Uke 41</title>
+    
+    <!-- Lenke til lokal Font Awesome (pass på at stien matcher mappen din) -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    
+    <!-- Lenke til egen CSS-fil -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Header & Navigasjon -->
     <header>
+        <div class="logo">
+            <i class="fa-solid fa-code"></i> <span>MinSide</span>
+        </div>
         <nav>
-            <a href="index.html" id="logo">Logo</a>
             <ul>
-                <li><a href="#">Hjem</a></li>
-                <li><a href="#">Tjenester</a></li>
-                <li><a href="#">Jobb</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="#hjem">Hjem</a></li>
+                <li><a href="#om">Om oss</a></li>
+                <li><a href="#tjenester">Tjenester</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
-        <section>
-            <h1>Reduksjon av Plast: Enkle Steg for Mindre Avfall</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#">Ler mer om hvordan vi jobber -></i></a>
-        </section>
     </header>
+
+    <!-- Hovedinnhold -->
     <main>
-        <section>
-            <figure>
-                    <img src="https://picsum.photos/300/300" alt="">
-            </figure>
-            <section>
-                <h2>Energisparing i Hverdagen: Hvordan Bruke Mindre Strøm</h2>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a href="#" class="btn">Ta kontakt for en uforpliktende prat</a>
-            </section>
+        <section class="content-section">
+            <div class="image-container">
+                <picture>
+                    <!-- Desktop-bilde (større bredde) -->
+                    <source media="(min-width: 680px)" srcset="https://picsum.photos/id/20/800/500">
+                    <!-- Mobil-bilde (standard) -->
+                    <img src="https://picsum.photos/id/20/400/300" alt="Eksempelbilde 1" loading="lazy">
+                </picture>
+            </div>
+            <div class="text-container">
+                <h2>Velkommen til responsivt design</h2>
+                <p>Denne nettsiden tilpasser seg automatisk skjermstørrelsen din ved hjelp av en mobil-først-tilnærming, media queries, CSS Flexbox, samt fleksible bilder med picture-taggen.</p>
+            </div>
         </section>
-        <section id="change-order">
-            <section>
-                <h2>Miljøvennlige Produkter: Hva Du Bør Velge</h2>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-            <figure>
-                <img src="https://picsum.photos/300/300" alt="">
-        </figure>
-        </section>
-        <section>
-            <figure>
-                <img src="https://picsum.photos/300/300" alt="">
-        </figure>
-            <section>
-                <h2>Gjenbruk og Resirkulering: Fra Avfall til Ressurser</h2>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a href="#" class="btn">Trenger du hjelp med å levere avfall til resirkulering?</a>
-            </section>
-        </section>
-        <section id="tjenester">
-            <h2>Bærekraftige Tjenester for en Grønnere Hverdag: Miljøvennlige Alternativer innen Transport, Mote og Energi</h2>
-            <article>
-                <h3>Delingstjenester for sykler og elektriske scootere</h3>
-                <p>Tilby dine ansatte, innbyggere eller gjester et grønt alternativ med vår delingstjeneste for sykler og elektriske scootere.</p>
-            </article>
-            <article>
-                <h3>Secondhand klær og moteutleie</h3>
-                <p>Gjør bærekraftig mote til en del av din bedriftskultur eller arrangementer.</p>
-            </article>
-            <article>
-                <h3>Energirådgivning for bedrifter og kommuner</h3>
-                <p>Optimaliser energiforbruket og reduser kostnadene med våre profesjonelle energirådgivningstjenester.</p>
-            </article>
-            <article id="booking">
-                <h3>Book et møte</h3>
-                <p>Bestill et uforpliktende møte for å utforske hvilke av våre tjenester som kan være til nytte for deg</p>
-                <a class="btn" href="#">Book et møte i dag</a>
-            </article>
+
+        <section class="content-section reverse">
+            <div class="image-container">
+                <picture>
+                    <source media="(min-width: 680px)" srcset="https://picsum.photos/id/30/800/500">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Eksempelbilde 2" loading="lazy">
+                </picture>
+            </div>
+            <div class="text-container">
+                <h2>Moderne og tilgjengelig web</h2>
+                <p>Med god typografi og skalerbare elementer sikrer vi at innholdet er like lett å lese og navigere på en liten mobilskjerm som på en stor desktop-skjerm.</p>
+            </div>
         </section>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <a href="#" id="footer-logo">Logo footer</a>
-        <section>
-            <h3>Generelt</h3>
-            <ul>
-                <li> Adresse</li>
-                <li> Epost</li>
-                <li> Telefonnummer</li>
-            </ul>
-            <ul id="some">
-                <li>facebook</li>
-                <li>instagram</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Snarveier</h3>
-            <ul>
-                <li>Tjenester</li>
-                <li>Jobber</li>
-                <li>Menneskene</li>
-                <li>Portfolio</li>
-                <li>Kontakt</li>
-            </ul>
-        </section>
+        <div class="footer-logo">
+            <i class="fa-solid fa-laptop-code"></i> MinSide AS
+        </div>
+        <div class="footer-sections">
+            <div class="footer-col">
+                <h3>Om oss</h3>
+                <p>Vi skaper gode digitale løsninger for alle enheter.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Lenker</h3>
+                <ul>
+                    <li><a href="#">Personvern</a></li>
+                    <li><a href="#">Vilkår og betingelser</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Følg oss</h3>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
