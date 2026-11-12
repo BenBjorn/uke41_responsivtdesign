@@ -1,0 +1,308 @@
+/* -----------------------------------------------------
+   Setter standard box-sizing slik at padding og border
+   inkluderes i elementets totale bredde og høyde.
+----------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #000;
+}
+
+/* -----------------------------------------------------
+   HEADER OG NAVIGASJON (Mobil-først: Vertikal meny)
+----------------------------------------------------- */
+nav {
+    background-color: #efefef;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav #logo {
+    font-size: 25px;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+nav ul li a {
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+header section {
+    padding: 3rem 1.5rem;
+    background-color: #fff;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+header a {
+    color: #1e4772;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------
+   HOVEDINNHOLD (MAIN)
+----------------------------------------------------- */
+main > section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Annenhver seksjon får mørk blå bakgrunn og hvit tekst */
+main > section:nth-child(odd) {
+    background-color: #1e4772;
+    color: #fff;
+}
+
+/* Seksjonene med like bakgrunner på mobil (f.eks #change-order) */
+main > section:nth-child(even) {
+    background-color: #fff;
+    color: #000;
+}
+
+main > section figure {
+    margin: 0;
+    width: 100%;
+}
+
+main > section picture,
+main > section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+main > section section {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    width: 100%;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* Knapper */
+.btn {
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    margin: 1rem 0;
+    text-align: center;
+    align-self: flex-start;
+}
+
+main > section:nth-child(even) .btn {
+    border-color: #1e4772;
+    color: #1e4772;
+}
+
+/* -----------------------------------------------------
+   TJENESTER SEKSJON
+----------------------------------------------------- */
+#tjenester {
+    padding: 3rem 1.5rem;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#tjenester article {
+    background-color: #efefef;
+    padding: 2rem;
+}
+
+#tjenester #booking {
+    background-color: #1e4772;
+    color: #fff;
+}
+
+#tjenester #booking .btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* -----------------------------------------------------
+   FOOTER
+----------------------------------------------------- */
+footer {
+    background-color: #383735;
+    color: #fff;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#footer-logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    padding: 0.4rem 0;
+}
+
+#some {
+    list-style: none;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+#some i {
+    font-size: 30px;
+    color: #fff;
+}
+
+
+/* =====================================================
+   MEDIA QUERIES (DESKTOP / FRA 680px)
+   Matcher referansebilde for desktop-visning
+===================================================== */
+@media (min-width: 680px) {
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 4rem;
+    }
+
+    nav #logo {
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    header section {
+        padding: 4rem;
+        max-width: 900px;
+    }
+
+    /* Hovedinnhold: Grid / 2 kolonner (bilde og tekst side om side, fyller hele bredden) */
+    main > section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 450px;
+    }
+
+    main > section figure {
+        height: 100%;
+    }
+
+    main > section section {
+        padding: 4rem;
+        height: 100%;
+    }
+
+    /* Sjekk for å speile annenhver seksjon slik som på desktop-bildet */
+    #change-order {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Bytter rekkefølge på elementene i #change-order slik at tekst kommer til venstre og bilde til høyre */
+    #change-order section:nth-child(1) {
+        order: 1;
+    }
+    #change-order figure:nth-child(2) {
+        order: 2;
+    }
+
+    /* Tjenester seksjon i rutenett på desktop */
+    #tjenester {
+        padding: 4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    #tjenester h2 {
+        grid-column: span 4;
+        margin-bottom: 1rem;
+    }
+
+    #tjenester article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #tjenester #booking {
+        grid-column: span 1; /* eller tilpasset kolonnespenn hvis ønskelig */
+    }
+
+    /* Footer layout på desktop */
+    footer {
+        padding: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    #footer-logo {
+        grid-column: span 2;
+    }
+}
